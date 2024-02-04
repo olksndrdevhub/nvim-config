@@ -2,8 +2,8 @@ return {
   "linux-cultist/venv-selector.nvim",
   cmd = "VenvSelect",
   opts = function(_, opts)
-    opts.anaconda_envs_path = "/home/oleksandr/miniconda3/envs"
-    opts.anaconda_base_path = "/home/oleksandr/miniconda3"
+    opts.anaconda_envs_path = "~/miniconda3/envs"
+    opts.anaconda_base_path = "~/miniconda3"
     if require("lazyvim.util").has("nvim-dap-python") then
       opts.dap_enabled = true
     end
