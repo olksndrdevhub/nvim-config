@@ -29,6 +29,15 @@ return {
           },
         },
       },
+      golsp = {
+        opts = {
+          cmd = { "gopls" },
+          filetypes = { "go", "gomod", "gowork", "gotmpl", "templ", "tmpl" },
+          root_dir = function(fname)
+            return require("lspconfig").util.root_pattern("go.work", "go.mod", ".git")(fname) or vim.fn.getcwd()
+          end,
+        },
+      },
     },
     setup = {
       ruff_lsp = function()
