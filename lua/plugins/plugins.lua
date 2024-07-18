@@ -15,6 +15,9 @@ return {
   },
   {
     "Exafunction/codeium.vim",
+    event = "BufEnter",
+    enabled = true,
+    version = "1.8.37",
     config = function()
       -- Change '<C-g>' here to any keycode you like.
       vim.keymap.set("i", "<C-a>", function()
