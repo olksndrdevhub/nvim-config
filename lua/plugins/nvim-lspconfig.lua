@@ -11,7 +11,6 @@ return {
       },
       cssls = {},
       tailwindcss = {},
-      pyright = {},
       ruff_lsp = {
         keys = {
           {
@@ -51,7 +50,6 @@ return {
     },
     ensure_installed = {
       "lua_ls",
-      "pyright", -- LSP for python
       "ruff-lsp", -- linter for python (includes flake8, pep8, etc.)
       "debugpy", -- debugger
       "black", -- formatter
