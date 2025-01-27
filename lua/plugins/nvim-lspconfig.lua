@@ -22,19 +22,19 @@ return {
       },
     },
     setup = {
-      ruff_lsp = function()
-        require("lazyvim.util").lsp.on_attach(function(client, _)
-          if client.name == "ruff" then
-            -- Disable hover in favor of Pyright
-            client.server_capabilities.hoverProvider = false
-          end
-        end)
-      end,
-      desc = "LSP: Disable hover capability from Ruff",
+      -- ruff = function()
+      --   require("lazyvim.util").lsp.on_attach(function(client, _)
+      --     if client.name == "ruff" then
+      --       -- Disable hover in favor of Pyright
+      --       client.server_capabilities.hoverProvider = false
+      --     end
+      --   end)
+      -- end,
+      -- desc = "LSP: Disable hover capability from Ruff",
     },
     ensure_installed = {
       "lua_ls",
-      "ruff", -- linter and formatter for python (includes flake8, pep8, etc.)
+      -- "ruff", -- linter and formatter for python (includes flake8, pep8, etc.)
       "pyright", -- LSP for python
       "debugpy", -- debugger
       "isort", -- organize imports
