@@ -49,16 +49,43 @@ return {
       terminal_colors = true,
       styles = {
         sidebars = "transparent",
-        floats = "normal",
+        floats = "transparent",
       },
     },
+  },
+  {
+    "vague2k/vague.nvim",
+    config = function()
+      require("vague").setup({
+        -- optional configuration here
+      })
+    end,
+  },
+  {
+    "cdmill/neomodern.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require("neomodern").setup({
+        -- MAIN OPTIONS --
+        -- Choose between 'iceclimber', 'coffeecat', 'darkforest', 'roseprime', 'daylight'
+        theme = "roseprime",
+        plain_float = true,
+        plugin = {
+          cmp = {
+            plain = true,
+          },
+        },
+      })
+      require("neomodern").load()
+    end,
   },
   {
     "rose-pine/neovim",
     name = "rose-pine",
     opts = {
-      variant = "moon", -- auto, main, moon, or dawn
-      dark_variant = "moon", -- main, moon, or dawn
+      variant = "main", -- auto, main, moon, or dawn
+      dark_variant = "main", -- main, moon, or dawn
       dim_inactive_windows = false,
       extend_background_behind_borders = true,
 
@@ -71,7 +98,7 @@ return {
       styles = {
         bold = true,
         italic = true,
-        transparency = false,
+        transparency = true,
       },
       groups = {
         border = "muted",
@@ -105,29 +132,29 @@ return {
       },
 
       highlight_groups = {
-        -- Comment = { fg = "foam" },
-        -- VertSplit = { fg = "muted", bg = "muted" },
+        Comment = { fg = "foam" },
+        VertSplit = { fg = "muted", bg = "muted" },
       },
 
       before_highlight = function(group, highlight, palette)
         -- Disable all undercurls
-        -- if highlight.undercurl then
-        --     highlight.undercurl = false
-        -- end
-        --
+        if highlight.undercurl then
+          highlight.undercurl = false
+        end
+
         -- Change palette colour
-        -- if highlight.fg == palette.pine then
-        --     highlight.fg = palette.foam
-        -- end
+        if highlight.fg == palette.pine then
+          highlight.fg = palette.foam
+        end
       end,
     },
   },
 
   -- Configure LazyVim to load theme
-  {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "catppuccin-macchiato",
-    },
-  },
+  -- {
+  --   "LazyVim/LazyVim",
+  --   opts = {
+  --     colorscheme = "neomodern",
+  --   },
+  -- },
 }
